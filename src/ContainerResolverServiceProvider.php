@@ -14,7 +14,7 @@ class ContainerResolverServiceProvider implements ServiceProviderInterface
     public function getExtensions()
     {
         return [
-            'ellipse.resolvers.middleware' => function ($container, callable $previous = null) {
+            'ellipse.resolvers.handlers' => function ($container, callable $previous = null) {
 
                 $previous = $previous ?: function ($element) {
 
