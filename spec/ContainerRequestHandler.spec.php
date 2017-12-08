@@ -63,7 +63,6 @@ describe('ContainerRequestHandler', function () {
             public function __construct(TestDependency1 $dependency1, TestDependency2 $dependency2)
             {
                 $this->dependency1 = $dependency1;
-                $this->dependency2 = $dependency2;
             }
 
             public function handle(ServerRequestInterface $request): ResponseInterface
@@ -93,9 +92,9 @@ describe('ContainerRequestHandler', function () {
 
     });
 
-    describe('->__invoke()', function () {
+    describe('->handle()', function () {
 
-        it('should inject the request and request handler into the middleware dependency', function () {
+        it('should proxy the request handler ->handle() method by injecting the request', function () {
 
             $dependency2 = new TestDependency2;
 
