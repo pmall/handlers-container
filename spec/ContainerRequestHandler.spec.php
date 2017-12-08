@@ -108,7 +108,6 @@ describe('ContainerRequestHandler', function () {
             $container->get->with(TestDependency2::class)->returns($dependency2);
 
             $request = mock(ServerRequestInterface::class)->get();
-            $handler = mock(RequestHandlerInterface::class)->get();
 
             $handler = new ContainerRequestHandler($container->get(), TestRequestHandler::class);
 
